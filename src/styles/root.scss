@@ -1,0 +1,40 @@
+body{
+    padding: 1em;
+}
+button{
+    background: none;
+    border: none;
+    border-right: 2px solid #000000;
+    font-size: 2em;
+    padding: 2em;
+    &:hover{
+        background-color: #000000;
+        color: #ffffff;
+    }
+}
+.board{
+    .board-row{
+        display: flex;
+        align-items: center;
+        border-bottom: 2px solid #000000;
+        &:last-child{
+            border-bottom:none;
+        }
+        .square{
+            width: 80px;
+            height: 80px;
+            border-right: 2px solid #000000;
+            overflow: hidden;
+            transition: all 0.2s;
+            &:last-child{
+                border-right: none;
+            }
+        }
+    }
+}
+.app{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
