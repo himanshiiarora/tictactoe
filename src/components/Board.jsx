@@ -1,15 +1,21 @@
 import React from 'react' // imported useState
 import Square from './Square'
 
-const Board = ({board, handleSquareClick}) => {
+const Board = ({board, handleSquareClick, winningSquares}) => {
 
   
   //moved alot of code to app.jsx
   const renderSquare = position => {  // used so that we need not call the same function in every tag of square.
+
+
+    const isWinningSquare = winningSquares.includes(position);
+
+
     return(
       <Square 
         value={board[position]}
         onClick = {() => handleSquareClick(position)}
+        isWinningSquare = {isWinningSquare}
       />
     );
   };

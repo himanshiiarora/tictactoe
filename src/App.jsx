@@ -12,7 +12,7 @@ const App = () => {
   // isXNext is a boolean value which represents our currept player, which simply means that is X the next player or not
   
 
-  const winner = calculateWinner(board); // to calculate winner
+  const {winner, winningSquares} = calculateWinner(board); // to calculate winner
   /* we put calculateWinner in a variable and passed the board state, we did not put it into a state because whenever our
   board updates, the component will be rerendered i.e everything that goes inside the component will be updated and this
   calculate winner will be updated everytime, so variable will be updated */
@@ -64,7 +64,7 @@ const App = () => {
       <h1>TIC TAC TOE</h1>
       <h2>{ message }</h2>
       <br></br>
-      <Board board={board} handleSquareClick={handleSquareClick} />
+      <Board board={board} handleSquareClick={handleSquareClick} winningSquares={winningSquares} />
     </div>
   );
 };

@@ -1,7 +1,7 @@
 //rafce
 import React from 'react'
 
-const Square = ({ value ,onClick}) => {
+const Square = ({ value ,onClick, isWinningSquare}) => {
   console.log('Sqaure rerendered');
   return (
     // <button className='square'
@@ -12,7 +12,11 @@ const Square = ({ value ,onClick}) => {
       //or
 
 
-    <button className='square' onClick={onClick}> 
+    <button 
+      className='square' 
+      onClick={onClick} 
+      style={{fontWeight: isWinningSquare ? 'bold' : 'normal'}}
+    > 
       { value }
     </button>
   );
