@@ -2,6 +2,7 @@
 import React from 'react'
 
 const Square = ({ value ,onClick}) => {
+  console.log('Sqaure rerendered');
   return (
     // <button className='square'
       // onClick={() => {
@@ -10,7 +11,7 @@ const Square = ({ value ,onClick}) => {
       
       //or
 
-      
+
     <button className='square' onClick={onClick}> 
       { value }
     </button>

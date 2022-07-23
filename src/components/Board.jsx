@@ -1,38 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react' // imported useState
 import Square from './Square'
-const Board = () => {
+
+const Board = ({board, handleSquareClick}) => {
 
   
-  const [board, setBoard] = useState( Array(9).fill(null));
-  const[isXNext, setIsXNext] = useState(false);
-  // isXNext is a boolean value which represents our currept player, which simply means that is X the next player or not
-
-
-
-  const handleSquareClick = (position) => {
-
-
-    // there's a problem, that suppose if we already marked a box as 'O', and if we click on it again,
-    // it will turn to 'X'. therefore to omit this behaviour, we will do the following.
-
-    if(board[position]){
-      return;
-    }
-
-
-    setBoard( (prev) => {
-      return prev.map((square, pos) => {
-        if(pos == position){
-          return isXNext ? 'X' : 'O'; //but we need to update it, else all qill be O
-        }
-
-        return square;
-      });
-    });
-
-    setIsXNext((prev) => !prev); // updation, O after X, and X after O
-  };
-  const renderSquare = position => {
+  //moved alot of code to app.jsx
+  const renderSquare = position => {  // used so that we need not call the same function in every tag of square.
     return(
       <Square 
         value={board[position]}
@@ -44,8 +17,9 @@ const Board = () => {
   return (
     <div className='board'>
 
-        <div className='board-row'>
-          { renderSquare(0) }
+        <div className='board-row'> {/* the square tag is not replaced by the renderSquare so that 1. we need not call the onclick function again and again
+        2. we can add value according to the position, i.e. we can have dynamic values at different places. */}
+          { renderSquare(0) } 
           { renderSquare(1) }
           { renderSquare(2) }
         </div>

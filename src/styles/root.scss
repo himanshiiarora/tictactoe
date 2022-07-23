@@ -1,11 +1,22 @@
 body{
     padding: 1em;
+    background-color: #CAD3C8;
+}
+h1{
+    padding: 1.2em;
+    background-color: #00000032;
+    border: 2px solid #000;
+    border-radius: 0.5em;
+    color: #000;
+    width: 90%;
+    text-align: center;
 }
 button{
     background: none;
     border: none;
     border-right: 2px solid #000000;
-    font-size: 2em;
+    font-weight: bold;
+    font-size: 1.7em;
     padding: 2em;
     &:hover{
         background-color: #000000;
@@ -21,8 +32,8 @@ button{
             border-bottom:none;
         }
         .square{
-            width: 120px;
-            height: 120px;
+            width: 100px;
+            height: 100px;
             display: flex;
             align-items: center;
             justify-content: center;
